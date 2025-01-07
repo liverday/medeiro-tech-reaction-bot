@@ -25,7 +25,8 @@ func SundayHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	var gif GTenorMinimalReturn
 	var gifUrl string
 
-	switch time.Now().Weekday() {
+	timeNow := getTimeNow()
+	switch timeNow.Weekday() {
 	case time.Sunday:
 		content = "É hoje... Ele chegou..."
 		gif = getRandomGif("o malvado")

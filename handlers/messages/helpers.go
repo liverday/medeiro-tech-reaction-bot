@@ -152,3 +152,8 @@ func replyMessage(m *discordgo.MessageCreate, s *discordgo.Session, gifUrl strin
 	_, err := s.ChannelMessageSendComplex(m.ChannelID, message)
 	return err
 }
+
+func getTimeNow() time.Time {
+	location, _ := time.LoadLocation("America/Sao_Paulo")
+	return time.Now().In(location)
+}
